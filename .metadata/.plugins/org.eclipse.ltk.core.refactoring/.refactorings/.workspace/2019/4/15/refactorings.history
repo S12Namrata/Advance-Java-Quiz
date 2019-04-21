@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;quiz-core/src/main/java/com/epita/fr/quiz/dataaccess/interface&apos;" deleteContents="false" description="Delete resource &apos;quiz-core/src/main/java/com/epita/fr/quiz/dataaccess/interface&apos;" element1="/quiz-core/src/main/java/com/epita/fr/quiz/dataaccess/interface" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1554794937418"/>
+</session>
