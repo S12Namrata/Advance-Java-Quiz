@@ -43,7 +43,7 @@ public class Quiz implements Serializable {
 	@Column (name = Constants.TEXT)
 	private String text;
 	
-	@ManyToMany(cascade = CascadeType.MERGE)
+	@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = Constants.QUIZ_QUESTIONS,
         joinColumns = @JoinColumn(name = "QUIZ_ID", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "QUES_ID", referencedColumnName = "id"))

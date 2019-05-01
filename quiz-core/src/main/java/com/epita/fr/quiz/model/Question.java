@@ -46,13 +46,13 @@ public class Question implements Serializable {
 	@Column
 	private String type;
 	
-	@ManyToMany(cascade = CascadeType.MERGE)
+	@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = Constants.QUESTION_ANSWERS,
         joinColumns = @JoinColumn(name = "QUES_ID", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "ANS_ID", referencedColumnName = "id"))
 	private Set<Answer> setOfAnswers;
 	
-	@ManyToMany(cascade = CascadeType.MERGE)
+	@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = Constants.QUESTIONS_TOPIC,
         joinColumns = @JoinColumn(name = "QUES_ID", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "TOPIC_ID", referencedColumnName = "id"))
