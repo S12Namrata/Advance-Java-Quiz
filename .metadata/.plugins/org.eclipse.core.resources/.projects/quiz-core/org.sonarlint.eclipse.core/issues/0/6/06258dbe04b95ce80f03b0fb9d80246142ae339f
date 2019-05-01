@@ -1,15 +1,3 @@
 
-qsquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8—ü´Í¤-H÷RMINORZ
-CODE_SMELL
-†squid:S00117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó¯ô¼8ÉõéŒ¤-HìRMINORZ
-CODE_SMELL
-–squid:UselessImportCheck"PRemove this unused import 'org.springframework.web.bind.annotation.PostMapping'.(äƒà°ùÿÿÿÿ8†æÝÍ¤-H•RMINORZ
-CODE_SMELL
-–squid:UselessImportCheck"PRemove this unused import 'org.springframework.web.bind.annotation.RequestBody'.(â­½Àýÿÿÿÿ8†æÝÍ¤-H–RMINORZ
-CODE_SMELL
-psquid:UselessImportCheck"*Remove this unused import 'java.util.Map'.(¼è½Òþÿÿÿÿ8†æÝÍ¤-H—RMINORZ
-CODE_SMELL
-usquid:UselessImportCheck"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿ8†æÝÍ¤-H˜RMINORZ
-CODE_SMELL
-Šsquid:UselessImportCheck	"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8†æÝÍ¤-H™RMINORZ
+†squid:S00117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó¯ô¼8ÉõéŒ¤-HðRMINORZ
 CODE_SMELL

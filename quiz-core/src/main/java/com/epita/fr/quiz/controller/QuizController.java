@@ -4,6 +4,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +18,7 @@ import com.epita.fr.quiz.dataaccess.QuizRepository;
 import com.epita.fr.quiz.model.Quiz;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/quiz")
 public class QuizController {
 	
@@ -32,7 +35,7 @@ public class QuizController {
 	@GetMapping("/")
 	@ResponseBody
 	public ResponseEntity<Iterable<Quiz>> all() {
-		return ResponseEntity.ok(quizRepository.findAll());
+		return ResponseEntity.ok(quizRepository.getListofQuiz());
 	}
 	
 	@GetMapping("/{id}")
@@ -48,5 +51,15 @@ public class QuizController {
 	   	return ResponseEntity.ok(quizRepository.save(quiz));
 
 	}
+	
+	@DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Integer id) {
+        if (quizRepository.findById(id).isPresent()) {
+           
+        	quizRepository.deleteById(id);
+            return ResponseEntity.ok().build();
+        }
 
+        return  ResponseEntity.badRequest().build();
+    }
 }

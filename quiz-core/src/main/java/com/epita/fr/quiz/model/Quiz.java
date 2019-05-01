@@ -40,10 +40,10 @@ public class Quiz implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
-	@Column (name = Constants.Q_NAME)
-	private String name;
+	@Column (name = Constants.TEXT)
+	private String text;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(name = Constants.QUIZ_QUESTIONS,
         joinColumns = @JoinColumn(name = "QUIZ_ID", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "QUES_ID", referencedColumnName = "id"))
@@ -70,8 +70,8 @@ public class Quiz implements Serializable {
 	/**
 	 * @return the name
 	 */
-	public String getName() {
-		return name;
+	public String getText() {
+		return text;
 	}
 
 	/**
@@ -84,8 +84,8 @@ public class Quiz implements Serializable {
 	/**
 	 * @param name the name to set
 	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setText(String name) {
+		this.text = name;
 	}
 	
 	
