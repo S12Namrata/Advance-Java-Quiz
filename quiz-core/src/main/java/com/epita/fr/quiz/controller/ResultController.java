@@ -15,20 +15,36 @@ import org.springframework.web.bind.annotation.RestController;
 import com.epita.fr.quiz.dataaccess.AnswersRepository;
 import com.epita.fr.quiz.model.Answer;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ResultController.
+ */
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/result")
 public class ResultController {
 	
+	/** The answers repository. */
 	@Autowired
 	private final AnswersRepository answersRepository;
 	
+	/**
+	 * Instantiates a new result controller.
+	 *
+	 * @param answersRepository the answers repository
+	 */
 	ResultController( AnswersRepository answersRepository) {
 		// TODO Auto-generated constructor stub
 		this.answersRepository = answersRepository;
 	}
 	
 	
+	/**
+	 * Evaluate result.
+	 *
+	 * @param quizAnswers the quiz answers
+	 * @return the response entity
+	 */
 	@PostMapping("/")
 	public ResponseEntity<Map> evaluateResult(@RequestBody Map<Integer,String> quizAnswers)
 	{

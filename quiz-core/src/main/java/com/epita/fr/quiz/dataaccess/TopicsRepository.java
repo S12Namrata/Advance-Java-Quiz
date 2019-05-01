@@ -9,8 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.epita.fr.quiz.model.Topic;
 
 /**
- * @author namrata
+ * The Interface TopicsRepository.
  *
+ * @author namrata
  */
 
 @Repository

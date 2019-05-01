@@ -9,13 +9,21 @@ import org.springframework.stereotype.Repository;
 
 import com.epita.fr.quiz.model.Quiz;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author namrata
+ * The Interface QuizRepository.
  *
+ * @author namrata
  */
 
 @Repository
 public interface QuizRepository extends CrudRepository<Quiz, Integer> {
+	
+	/**
+	 * Gets the listof quiz.
+	 *
+	 * @return the listof quiz
+	 */
 	@Query(value="select id, text from QUIZES" ,nativeQuery=true)
 	public Iterable<Quiz> getListofQuiz();
 

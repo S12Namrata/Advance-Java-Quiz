@@ -15,18 +15,33 @@ import com.epita.fr.quiz.Exceptions.QuizException;
 import com.epita.fr.quiz.dataaccess.QuestionsRepository;
 import com.epita.fr.quiz.model.Question;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AppRestController.
+ */
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class AppRestController {
 	
+	/** The questions repository. */
 	@Autowired
 	private final QuestionsRepository questionsRepository;
 	
+	/**
+	 * Instantiates a new app rest controller.
+	 *
+	 * @param questionsRepository the questions repository
+	 */
 	AppRestController(QuestionsRepository questionsRepository) {
 		// TODO Auto-generated constructor stub
 		this.questionsRepository = questionsRepository;
 	}
 	
+	/**
+	 * Home.
+	 *
+	 * @return the string
+	 */
 	@RequestMapping("/")
 	public String home()
 	{
@@ -34,6 +49,12 @@ public class AppRestController {
 	}
 	
 	
+	/**
+	 * Generate random quiz based on topic id.
+	 *
+	 * @param tpc_id the tpc id
+	 * @return the iterable
+	 */
 	@GetMapping("/random/{tpc_id}")
 	@ResponseBody
 	Iterable<Question> generateRandomQuizBasedOnTopicId(@PathVariable Integer tpc_id) {
@@ -41,6 +62,12 @@ public class AppRestController {
 		return questionsRepository.getListofQuestionsByTopic(tpc_id,5);
 	}
 	
+	/**
+	 * Questions not found handler.
+	 *
+	 * @param ex the ex
+	 * @return the string
+	 */
 	@ResponseBody
 	@ExceptionHandler(QuizException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)

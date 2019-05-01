@@ -21,9 +21,11 @@ import org.springframework.stereotype.Component;
 
 import com.epita.fr.quiz.utils.Constants;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author namrata
+ * The Class Quiz.
  *
+ * @author namrata
  */
 
 @Component
@@ -31,29 +33,35 @@ import com.epita.fr.quiz.utils.Constants;
 @Table (name = Constants.QUIZES)
 public class Quiz implements Serializable {
 	
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The id. */
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
+	/** The text. */
 	@Column (name = Constants.TEXT)
 	private String text;
 	
+	/** The set of question. */
 	@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = Constants.QUIZ_QUESTIONS,
         joinColumns = @JoinColumn(name = "QUIZ_ID", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "QUES_ID", referencedColumnName = "id"))
 	private Set<Question> setOfQuestion;
 
+	/**
+	 * Instantiates a new quiz.
+	 */
 	public Quiz() { 
 		// default constructor
 	}
 
 	/**
+	 * Gets the serialversionuid.
+	 *
 	 * @return the serialversionuid
 	 */
 	public static long getSerialversionuid() {
@@ -61,6 +69,8 @@ public class Quiz implements Serializable {
 	}
 
 	/**
+	 * Gets the id.
+	 *
 	 * @return the id
 	 */
 	public Integer getId() {
@@ -68,6 +78,8 @@ public class Quiz implements Serializable {
 	}
 
 	/**
+	 * Gets the text.
+	 *
 	 * @return the name
 	 */
 	public String getText() {
@@ -75,6 +87,8 @@ public class Quiz implements Serializable {
 	}
 
 	/**
+	 * Sets the id.
+	 *
 	 * @param id the id to set
 	 */
 	public void setId(Integer id) {
@@ -82,6 +96,8 @@ public class Quiz implements Serializable {
 	}
 
 	/**
+	 * Sets the text.
+	 *
 	 * @param name the name to set
 	 */
 	public void setText(String name) {
@@ -90,6 +106,8 @@ public class Quiz implements Serializable {
 	
 	
 	/**
+	 * Gets the sets the of question.
+	 *
 	 * @return the setOfQuestion
 	 */
 	public Set<Question> getSetOfQuestion() {
@@ -97,6 +115,8 @@ public class Quiz implements Serializable {
 	}
 
 	/**
+	 * Sets the sets the of question.
+	 *
 	 * @param setOfQuestion the setOfQuestion to set
 	 */
 	public void setSetOfQuestion(Set<Question> setOfQuestion) {

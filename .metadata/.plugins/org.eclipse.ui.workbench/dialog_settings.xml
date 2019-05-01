@@ -5,15 +5,27 @@
 		<item value="82" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="-1" key="dialogHeight"/>
-		<item value="-1" key="dialogWidth"/>
+		<item value="810" key="dialogHeight"/>
+		<item value="864" key="dialogWidth"/>
 		<list key="textEntries">
+			<item value="1"/>
+			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="orderedElements">
+			<item value="com.objectaid.uml.new.classdiagram"/>
+			<item value="net.sourceforge.plantuml.jdt.ui.JdtPlantUmlView"/>
+			<item value="org.eclipse.ui.views.showView(org.eclipse.ui.views.showView.viewId=net.sourceforge.plantuml.jdt.ui.JdtPlantUmlView)"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.wizards"/>
+			<item value="org.eclipse.e4.ui.parts"/>
+			<item value="org.eclipse.ui.commands"/>
 		</list>
 		<list key="textArray">
+			<item value="class dia"/>
+			<item value="class"/>
+			<item value="uml"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">

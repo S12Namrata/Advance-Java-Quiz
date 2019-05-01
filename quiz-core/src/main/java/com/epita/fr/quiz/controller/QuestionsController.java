@@ -20,28 +20,50 @@ import org.springframework.web.bind.annotation.RestController;
 import com.epita.fr.quiz.dataaccess.QuestionsRepository;
 import com.epita.fr.quiz.model.Question;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class QuestionsController.
+ */
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/questions")
 public class QuestionsController {
 	
+	/** The questions repository. */
 	private final QuestionsRepository questionsRepository;
 	
+	/** The questions. */
 	@Autowired
 	Question questions;
 
 	
+	/**
+	 * Instantiates a new questions controller.
+	 *
+	 * @param questionsRepository the questions repository
+	 */
 	QuestionsController(QuestionsRepository questionsRepository)
 	{
 		this.questionsRepository = questionsRepository;
 	}
 
+	/**
+	 * All.
+	 *
+	 * @return the iterable
+	 */
 	@GetMapping("/")
 	@ResponseBody
 	public Iterable<Question> all() {
 		return questionsRepository.findAll();
 	}
 	
+	/**
+	 * Question by id.
+	 *
+	 * @param id the id
+	 * @return the response entity
+	 */
 	@GetMapping("/{id}")
 	@ResponseBody
 	ResponseEntity<Optional<Question>> questionById(@PathVariable Integer id) {
@@ -50,6 +72,12 @@ public class QuestionsController {
 	}
 	
 	
+	/**
+	 * Adds the new questions.
+	 *
+	 * @param ques the ques
+	 * @return the response entity
+	 */
 	@PostMapping("/")
 	public ResponseEntity<Question> addNewQuestions(@Valid @RequestBody Question ques)
 	{
@@ -57,6 +85,13 @@ public class QuestionsController {
 
 	}
 	
+    /**
+     * Update.
+     *
+     * @param id the id
+     * @param ques the ques
+     * @return the response entity
+     */
     @PutMapping("/{id}")
     public ResponseEntity<Question> update(@PathVariable Integer id, @Valid @RequestBody Question ques) {
         if (questionsRepository.findById(id).isPresent()) {
@@ -67,6 +102,12 @@ public class QuestionsController {
         
     }
     
+    /**
+     * Delete.
+     *
+     * @param id the id
+     * @return the response entity
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Integer id) {
         if (questionsRepository.findById(id).isPresent()) {

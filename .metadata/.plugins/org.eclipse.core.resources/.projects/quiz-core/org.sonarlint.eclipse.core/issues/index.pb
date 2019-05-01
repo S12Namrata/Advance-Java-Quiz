@@ -37,3 +37,7 @@ p
 @src/main/java/com/epita/fr/quiz/controller/ResultController.java,7/b/7b52d6fe612fa15eef45c5a42d028557292e104d
 o
 ?src/main/java/com/epita/fr/quiz/controller/TopicController.java,d/7/d72c599d0dcee9da4a8ed69e162250619a213e01
+a
+1src/main/java/com/quiz-application class diag.png,1/6/1696cb3ee3b6cc91d97357affa23b8e6c57a46a4
+b
+2src/main/java/com/quiz-application class diag.ucls,c/5/c5402f0256563da80fc6dc3760c13616a222d7a2
